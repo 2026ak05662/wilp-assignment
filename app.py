@@ -20,7 +20,7 @@ from sklearn.metrics import (accuracy_score, classification_report,
 MODEL_DIR = "model"
 SAMPLE_TEST_FILE = "test_data.csv"
 
-st.set_page_config(page_title="Classifier evaluation", page_icon="🧪", layout="wide")
+st.set_page_config(page_title="Student outcome early-warning", page_icon="🎓", layout="wide")
 
 
 @st.cache_resource
