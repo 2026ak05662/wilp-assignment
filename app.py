@@ -1,5 +1,7 @@
 """
-Streamlit app
+Streamlit app for the student dropout early-warning project.
+Loads the five saved models, evaluates them on an uploaded test CSV
+(no retraining), and compares their performance.
 """
 
 import json
@@ -35,7 +37,7 @@ def evaluate(model, X, y_true, n_classes):
     y_pred = model.predict(X)
     y_prob = model.predict_proba(X)
 
-    # AUC can't be computed if a class is missing from the uploaded file (e.g. a small sample), show n/a instead of crashing
+    #AUC can't be computed if a class is missing from the uploaded file (e.g. a small sample), so show n/a instead of crashing
     try:
         if n_classes == 2:
             auc = roc_auc_score(y_true, y_prob[:, 1])
