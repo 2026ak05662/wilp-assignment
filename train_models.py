@@ -77,7 +77,7 @@ def build_preprocessor(X):
 
 
 def get_models():
-    # Five classifiers compared on the same split; depth and k limited to reduce overfitting.
+    # max_depth=8 and n_neighbors=7 chosen with 5-fold CV in tune_hyperparameters()
     return {
         "Logistic Regression": LogisticRegression(max_iter=2000),
         "Decision Tree": DecisionTreeClassifier(max_depth=8, random_state=RANDOM_STATE),
